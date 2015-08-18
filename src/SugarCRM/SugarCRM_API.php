@@ -108,7 +108,7 @@ class SugarCRM_API {
         $result = curl_exec($curl_request);
         curl_close($curl_request);
         $result = explode("\r\n\r\n", $result, 2);
-        $result = json_decode($result[1], TRUE, 512);
+        $result = json_decode($result[1], TRUE);
         ob_end_flush();
         
         return $result;
@@ -197,7 +197,9 @@ class SugarCRM_API {
     /**
      * Retrieves a single bean based on record ID
      * 
-     * @return array
+     * Call SugarCRM API method, see <a href="http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/">supporting documentation</a> for corresponding method.
+     * 
+     * @link http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/
      */
     public function get_entry($module_name, $id, array $select_fields=null, array $link_name_to_fields_array=null, $track_view=true){
         $method = 'get_entry';
@@ -215,7 +217,9 @@ class SugarCRM_API {
     /**
      * Retrieves a list of beans based on query specifications
      * 
-     * @return array
+     * Call SugarCRM API method, see <a href="http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/">supporting documentation</a> for corresponding method.
+     * 
+     * @link http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/
      */
     public function get_entry_list($module_name, $query=null, $order_by=null, $offset=0,
         array $select_fields=null, array $link_name_to_fields_array=null, $max_results=0,
@@ -239,7 +243,9 @@ class SugarCRM_API {
     /**
      * Creates or updates a specific record
      * 
-     * @return array
+     * Call SugarCRM API method, see <a href="http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/">supporting documentation</a> for corresponding method.
+     * 
+     * @link http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/
      */
     public function set_entry($module_name, array $name_value_list=null){
         $method = 'set_entry';
@@ -255,7 +261,9 @@ class SugarCRM_API {
     /**
      * Creates or updates a list of records
      * 
-     * @return array
+     * Call SugarCRM API method, see <a href="http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/">supporting documentation</a> for corresponding method.
+     * 
+     * @link http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/
      */
     public function set_entries($module_name, array $name_value_lists=null){
         $method = 'set_entries';
@@ -270,7 +278,9 @@ class SugarCRM_API {
     /**
      * Creates a new document revision for a specific document record
      * 
-     * @return array
+     * Call SugarCRM API method, see <a href="http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/">supporting documentation</a> for corresponding method.
+     * 
+     * @link http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/
      */
     public function set_document_revision($id, $file, $filename, $revision){
         $method = 'set_document_revision';
@@ -289,7 +299,9 @@ class SugarCRM_API {
     /**
      * Sets relationships between two records. You can relate multiple records to a single record using this
      * 
-     * @return array
+     * Call SugarCRM API method, see <a href="http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/">supporting documentation</a> for corresponding method.
+     * 
+     * @link http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/
      */
     public function set_relationship($module_name, $module_id, $link_field_name, array $related_ids, array $name_value_list=null,
         $delete=0){
@@ -309,7 +321,9 @@ class SugarCRM_API {
     /**
      * Sets multiple relationships between multiple record sets
      * 
-     * @return array
+     * Call SugarCRM API method, see <a href="http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/">supporting documentation</a> for corresponding method.
+     * 
+     * @link http://support.sugarcrm.com/02_Documentation/04_Sugar_Developer/Sugar_Developer_Guide_6.5/02_Application_Framework/Web_Services/05_Method_Calls/
      */
     public function set_relationships(array $module_names, array $module_ids, array $link_field_names, array $related_ids,
         array $name_value_lists=null, array $delete_array=null){
