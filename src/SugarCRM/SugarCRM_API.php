@@ -1,6 +1,6 @@
 <?php
 class SugarCRM_API {
-    const ERROR_DEFS_INVALID_SESSION = invalid_session;
+    const ERROR_DEFS_INVALID_SESSION = 'invalid_session';
     //extracted from SugarCRM instance, SoapErrorDefinitions
     static $error_defs = array(
         'no_error'=>array('number'=>0 , 'name'=>'No Error', 'description'=>'No Error'),
